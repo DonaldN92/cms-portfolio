@@ -52,6 +52,17 @@
 <script type="text/javascript" src="js/imagesloaded.js"></script>
 <!-- custom main js file -->
 <script type="text/javascript" src="js/custom.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 
 
 </body></html>
