@@ -1,5 +1,6 @@
 backend:
   name: git-gateway
+  "app_metadata": {"roles": ["admin", "photographer"]}
 
 media_folder: "static/img" # Folder where user uploaded files should go
 public_folder: "img"
