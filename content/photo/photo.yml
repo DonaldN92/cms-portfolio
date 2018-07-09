@@ -1,1 +1,4 @@
-
+photo:
+  - event: Test Event
+    image: /img/color-logo.png
+    titre: Test Photo
