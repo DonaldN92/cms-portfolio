@@ -25,6 +25,12 @@ integer tincidunt cras dapibus.</h4>
         </div>
     </section>
     <!-- end about section -->
+<p> ---Hello---- </p>
+<ul>
+        {{ range $.Param "event" }}
+          <li>{{ .event.titre }} {{ .event.date }} {{ .event.description }}</li>
+        {{ end }}
+</ul>
 
     <!--portfolio-->
     <section id="portfolio" class="sm-grid col-width gutter">
