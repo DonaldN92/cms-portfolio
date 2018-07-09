@@ -7,22 +7,33 @@ backend:
 media_folder: "static/img" # Folder where user uploaded files should go
 public_folder: "img"
 
-collections: # A list of collections the CMS should be able to edit
-  - name: "event" # Used in routes, ie.: /admin/collections/:slug/edit
-    label: "Evenement" # Used in the UI, ie.: "New Post"
-    folder: "content/event" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    fields: # The fields each document in this collection have
-      - {label: "Titre", name: "titre", widget: "string"}
-      - {label: "Date", name: "date", widget: "datetime"}
-      - {label: "Description", name: "description", widget: "markdown"}
-      - {label: "Couverture", name: "image", widget: "image", required: false}
-      
-  - name: "photo" 
-    label: "Photo" 
-    folder: "content/photo" 
-    create: true 
-    fields: 
-      - {label: "Titre", name: "titre", widget: "string"}
-      - {label: "Evenement", name: "event", widget: "string"}
-      - {label: "Image", name: "image", widget: "image"}
+
+collections:
+    - label: "Settings"
+      name: "settings"
+      files:
+        - name: "event"
+          label: "Evenement"
+          file: "content/event/event.yml"
+          extension: "yml"
+          fields:
+            - label: "Evenement"
+              name: "event"
+              widget: "list"
+              fields:
+                - {label: "Titre", name: "titre", widget: "string"}
+                - {label: "Date", name: "date", widget: "datetime"}
+                - {label: "Description", name: "description", widget: "markdown"}
+                - {label: "Couverture", name: "image", widget: "image", required: false}
+        - name: "Photo"
+          label: "Photo"
+          file: "content/photo/photo.yml"
+          extension: "yml"
+          fields:
+            - label: "Photo"
+              name: "photo"
+              widget: "list"
+              fields:
+                - {label: "Titre", name: "titre", widget: "string"}
+                - {label: "Evenement", name: "event", widget: "string"}
+                - {label: "Image", name: "image", widget: "image"}
