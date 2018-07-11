@@ -27,7 +27,7 @@ integer tincidunt cras dapibus.</h4>
     <!-- end about section -->
 <p> ---Hello---- </p>
 <ul>
-        {{ range $.Site.content.event.event }}
+        {{ range $.content.event.event }}
           <li>{{ .titre }} {{ .date }} {{ .description }}</li>
         {{ end }}
 </ul>
