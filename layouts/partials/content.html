@@ -27,7 +27,10 @@ integer tincidunt cras dapibus.</h4>
     <!-- end about section -->
 <p> ---Hello---- </p>
 <ul>
-        {{ range $.Param "eventf" }}
+    {{ $bundle := .Site.GetPage "event"  }}
+{{ range $bundle.Resources.ByType "event"  }}
+    
+        //{{ range $.Param "eventf" }}
 <li>{{ .event.titre }} {{ .event.date }} {{ .event.description }}</li>
         {{ end }}
 </ul>
